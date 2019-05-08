@@ -4,7 +4,6 @@
     margin: 0 auto;
     display: inline-block;
     position: relative;
-    cursor: pointer;
     margin-bottom: -3.5px;
 }
 
@@ -30,6 +29,7 @@
 .ColorBox:hover .ColorBox-Copy-Button {
     opacity: 1;
     transition: 0.25s;
+    cursor: pointer;
 }
 
 .ColorBox-Box-Content {
