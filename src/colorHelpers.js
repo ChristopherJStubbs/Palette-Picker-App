@@ -6,6 +6,7 @@ function generatePalette(starterPalette) {
     let newPalette = {
         paletteName: starterPalette.paletteName,
         id: starterPalette.id,
+        emoji: starterPalette.emoji,
         colors: {}
     };
         for (let level of levels) {
@@ -15,9 +16,9 @@ function generatePalette(starterPalette) {
             let scale = getScale(color.color, 10).reverse();
             for (let i in scale) {
                 newPalette.colors[levels[i]].push({
-                    name: `${color.name} ${levels[1]}`,
+                    name: `${color.name} ${levels[i]}`,
                     id: color.name.toLowerCase().replace(/ /g, '-'),
-                    hex: scale[1],
+                    hex: scale[i],
                     rgb: chroma(scale[i]).css(),
                     rgba: chroma(scale[i]).css().replace('rgb', 'rgba').replace(')', ',1.0)')
                 })
