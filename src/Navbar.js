@@ -7,6 +7,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Slider, { Range } from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import './Navbar.css';
+import {Link} from 'react-router-dom';
 
 class Navbar extends Component {
     constructor(props) {
@@ -36,7 +37,7 @@ class Navbar extends Component {
         return (
             <header className="Navbar">
                 <div className="logo">
-                    <a href="#">Perfect Palette</a>
+                    <Link to="/">Perfect Palette</Link>
                 </div>
                 <div className="slider-container">
                     <span>Level: {level}</span>
