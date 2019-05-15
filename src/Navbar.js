@@ -65,7 +65,7 @@ class Navbar extends Component {
                     onClose={this.closeSnackbar}
                     message={<span id="message-id" >Format Successfully Changed!</span>}
                     ContentProps={{
-                        "aria-describeedby": "message-id"
+                        "aria-describedby": "message-id"
                     }}
                     action={[
                         <IconButton
