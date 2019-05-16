@@ -56,6 +56,14 @@
     font-size: .75rem;
 }
 
+.light-text {
+    color: #fff;
+}
+
+.ColorBox .dark-text {
+    color: rgba(0, 0, 0, 0.5);
+}
+
 .ColorBox-See-More {
     background: rgba(255, 255, 255, 0.25);
     position: absolute;
