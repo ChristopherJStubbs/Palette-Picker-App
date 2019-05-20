@@ -56,6 +56,67 @@ const styles = {
         border: "none",
         textDecoration: "none",
         opacity: "0"
+    },
+    boxContent: {
+        position: "absolute",
+        padding: "10px",
+        width: "100%",
+        left: "0",
+        bottom: "0",
+        color: "black",
+        letterSpacing: "1px",
+        textTransform: "uppercase",
+        fontSize: ".75rem"
+    },
+    ColorBoxCopyOverlay: {
+        opacity: "0",
+        zIndex: "0",
+        width: "100%",
+        height: "100%",
+        transition: "transform 0.75s ease-in-out",
+        transform: "scale(0.1)"
+    },
+    showOverlay: {
+        opacity: "1",
+        transform: "scale(50)",
+        zIndex: "100",
+        position: "absolute"
+    },
+    ColorBoxCopyMessage: {
+        position: "fixed",
+        top: "0",
+        bottom: "0",
+        left: "0",
+        right: "0",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        fontSize: "4rem",
+        transform: "scale(0.1)",
+        opacity: "0",
+        color: "#fff",
+        flexDirection: "column",
+        "& h1": {
+            fontWeight: "400",
+            textShadow: "1px 2px black",
+            background: "rgba(255, 255, 255, 0.25)",
+            width: "100%",
+            textAlign: "center",
+            marginBottom: "0",
+            padding: "1.5rem",
+            textTransform: "uppercase"
+        },
+        "& p": {
+            fontSize: "2rem",
+            fontWeight: "200"
+        }
+    },
+    showCopied: {
+        opacity: "1",
+        transform: "scale(1)",
+        zIndex: 200,
+        transition: "all 0.4s ease-in-out",
+        transitionDelay: "0.3s"
     }
 }
 
@@ -81,14 +142,14 @@ class ColorBox extends Component {
             <div style={{ background }} className={classes.ColorBox}>
                 <div
                     style={{background}}
-                    className={`ColorBox-Copy-Overlay ${copied && "show"}`}
+                    className={`${classes.ColorBoxCopyOverlay} ${copied && classes.showOverlay}`}
                 />
-                <div className={`ColorBox-Copy-Message ${copied && "show"}`} >
+                <div className={`${classes.ColorBoxCopyMessage} ${copied && classes.showCopied}`} >
                     <h1>Copied!</h1>
                     <p className={classes.copyText}>{this.props.background}</p>
                 </div>
-                <div className="ColorBox-Copy-Container">
-                    <div className="ColorBox-Box-Content">
+                <div>
+                    <div className={classes.boxContent}>
                         <span className={classes.colorName}>{name}</span>
                     </div>
                     <CopyToClipboard text={background} onCopy={this.changeCopyState}>

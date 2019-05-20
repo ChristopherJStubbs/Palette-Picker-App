@@ -1,17 +1,17 @@
-.ColorBox {
+/* .ColorBox {
     width: 20%;
     height: 25%;
     margin: 0 auto;
     display: inline-block;
     position: relative;
     margin-bottom: -3.5px;
-}
+} */
 
-.SingleColorPalette .ColorBox {
+/* .SingleColorPalette .ColorBox {
     height: 50%;
-}
+} */
 
-.ColorBox.GoBack {
+/* .ColorBox.GoBack {
     background-color: #000;
 }
 
@@ -32,9 +32,9 @@
     color: #ffe;
     border: none;
     text-decoration: none;
-}
+} */
 
-.ColorBox-Copy-Button {
+/* .ColorBox-Copy-Button {
     opacity: 0;
 }
 
@@ -42,9 +42,9 @@
     opacity: 1;
     transition: 0.25s;
     cursor: pointer;
-}
+} */
 
-.ColorBox-Box-Content {
+/* .ColorBox-Box-Content {
     position: absolute;
     padding: 10px;
     width: 100%;
@@ -54,9 +54,9 @@
     letter-spacing: 1px;
     text-transform: uppercase;
     font-size: .75rem;
-}
+} */
 
-.light-text {
+/* .light-text {
     color: #fff;
 }
 
@@ -76,25 +76,25 @@
     text-align: center;
     line-height: 30px;
     text-transform: uppercase;
-}
+} */
 
-.ColorBox-Copy-Overlay {
+/* .ColorBox-Copy-Overlay {
     opacity: 0;
     z-index: 0;
     width: 100%;
     height: 100%;
     transition: transform 0.75s ease-in-out;
     transform: scale(0.1);
-}
+} */
 
-.ColorBox-Copy-Overlay.show {
+/* .ColorBox-Copy-Overlay.show {
     opacity: 1;
     transform: scale(50);
     z-index: 100;
     position: absolute;
-}
+} */
 
-.ColorBox-Copy-Message {
+/* .ColorBox-Copy-Message {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -108,16 +108,16 @@
     opacity: 0;
     color: #fff;
     flex-direction: column;
-}
+} */
 
-.ColorBox-Copy-Message.show {
+/* .ColorBox-Copy-Message.show {
     opacity: 1;
     transform: scale(1);
     z-index: 200;
     transition: all 0.4s ease-in-out;
     transition-delay: 0.3s;
-}
-
+} */
+/*
 .ColorBox-Copy-Message h1 {
     font-weight: 400;
     text-shadow: 1px 2px black;
@@ -132,4 +132,4 @@
 .ColorBox-Copy-Message p {
     font-size: 2rem;
     font-weight: 200;
-}
+} */
