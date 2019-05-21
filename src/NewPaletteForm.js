@@ -12,6 +12,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import { ChromePicker } from 'react-color';
 import Button from '@material-ui/core/Button';
+import DraggableColorBox from './DraggableColorBox';
 
 
 const drawerWidth = 420;
@@ -56,6 +57,7 @@ const styles = theme => ({
         justifyContent: 'flex-end',
     },
     content: {
+        height: 'calc(100vh - 64px)',
         flexGrow: 1,
         padding: theme.spacing.unit * 3,
         transition: theme.transitions.create('margin', {
@@ -175,15 +177,9 @@ class NewPaletteForm extends Component {
                     })}
                 >
                     <div className={classes.drawerHeader} />
-                    <ul>
                         {this.state.colors.map(color => (
-                            <li
-                                style={{backgroundColor: color}}
-                            >
-                                {color}
-                            </li>
+                            <DraggableColorBox color={color} />
                         ))}
-                    </ul>
                 </main>
             </div>
         );
