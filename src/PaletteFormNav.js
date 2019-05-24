@@ -75,6 +75,12 @@ class PaletteFormNav extends Component {
         });
     }
 
+    closeForm = () => {
+        this.setState({
+            isFormOpen: false
+        });
+    }
+
     render() {
         const { newPaletteName } = this.state;
         const { classes, open, palettes, handleSubmit } = this.props;
@@ -122,7 +128,11 @@ class PaletteFormNav extends Component {
                     </div>
                 </AppBar>
                 {this.state.isFormOpen && (
-                    <PaletteMetaForm palettes={palettes} handleSubmit={handleSubmit}/>
+                    <PaletteMetaForm
+                        palettes={palettes}
+                        handleSubmit={handleSubmit}
+                        closeForm={this.closeForm}
+                    />
                 )}
             </div>
         );
