@@ -4,6 +4,7 @@ import PaletteMetaForm from './PaletteMetaForm';
 import { withStyles } from '@material-ui/core/styles';
 import classNames from 'classnames';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Add from '@material-ui/icons/Add';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -59,7 +60,7 @@ class PaletteFormNav extends Component {
                             onClick={this.props.handleDrawerOpen}
                             className={classNames(classes.menuButton, open && classes.hide)}
                         >
-                            <MenuIcon />
+                        <Add />
                         </IconButton>
                         <Typography variant="h6" color="inherit" noWrap>
                             Create A Palette

@@ -1,11 +1,8 @@
-const drawerWidth = 400;
+const drawerWidth = 350;
 
 const styles = theme => ({
     root: {
         display: 'flex',
-    },
-    hide: {
-        display: 'none',
     },
     drawer: {
         width: drawerWidth,
@@ -22,11 +19,12 @@ const styles = theme => ({
         padding: '0 8px',
         ...theme.mixins.toolbar,
         justifyContent: 'flex-end',
+        width: "100%"
     },
     content: {
         height: 'calc(100vh - 64px)',
         flexGrow: 1,
-        padding: theme.spacing.unit * 3,
+        padding: 0,
         transition: theme.transitions.create('margin', {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
