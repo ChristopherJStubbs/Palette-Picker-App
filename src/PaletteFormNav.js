@@ -25,7 +25,8 @@ const styles =  theme => ({
         }),
         flexDirection: "row",
         justifyContent: "space-between",
-        height: '64px'
+        height: '64px',
+        alignItems: "center"
     },
     appBarShift: {
         width: `calc(100% - ${drawerWidth}px)`,
@@ -40,7 +41,16 @@ const styles =  theme => ({
         marginRight: 20,
     },
     navBtns: {
-
+        marginRight: "1.5rem"
+    },
+    button: {
+        margin: "0 0.5rem",
+        "& a": {
+            textDecoration: "none"
+        }
+    },
+    links: {
+        textDecoration: "none"
     }
 });
 
@@ -49,13 +59,20 @@ class PaletteFormNav extends Component {
         super(props);
         this.state = {
             newPaletteName: '',
+            isFormOpen: false
         }
     }
 
     handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
-        })
+        });
+    }
+
+    openForm = () => {
+        this.setState({
+            isFormOpen: true
+        });
     }
 
     render() {
@@ -85,14 +102,28 @@ class PaletteFormNav extends Component {
                         </Typography>
                     </Toolbar>
                     <div className={classes.navBtns} >
-                        <PaletteMetaForm palettes={palettes} handleSubmit={handleSubmit}/>
-                        <Link to='/'>
-                            <Button variant='contained' color='secondary'>
+                        <Link to='/' className={classes.links}>
+                            <Button
+                                variant='contained'
+                                color='secondary'
+                                className={classes.button}
+                            >
                                 Go Back
                             </Button>
                         </Link>
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            className={classes.button}
+                            onClick={this.openForm}
+                        >
+                            Save Palette
+                        </Button>
                     </div>
                 </AppBar>
+                {this.state.isFormOpen && (
+                    <PaletteMetaForm palettes={palettes} handleSubmit={handleSubmit}/>
+                )}
             </div>
         );
     }

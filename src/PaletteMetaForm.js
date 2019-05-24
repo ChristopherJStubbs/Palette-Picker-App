@@ -12,7 +12,7 @@ class PaletteMetaForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            open: false,
+            open: true,
             newPaletteName: ''
         }
     }
@@ -46,23 +46,20 @@ class PaletteMetaForm extends Component {
     render() {
         const { open, newPaletteName } = this.state;
         return (
-            <div>
-                <Button variant="outlined" color="primary" onClick={this.handleClickOpen}>
-                    Open form dialog
-                </Button>
-                <Dialog open={open} onClose={this.handleClose} aria-labelledby="form-dialog-title">
-                    <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
+            <Dialog open={open} onClose={this.handleClose} aria-labelledby="form-dialog-title">
+                <DialogTitle id="form-dialog-title">Choose a Palette Name</DialogTitle>
+                <ValidatorForm onSubmit={() => this.props.handleSubmit(newPaletteName)}>
                     <DialogContent>
                         <DialogContentText>
-                            To subscribe to this website, please enter your email address here. We will send updates
-                            occasionally.
+                            Please enter a unique name for you palette and save.
                         </DialogContentText>
-                        <ValidatorForm onSubmit={() => this.props.handleSubmit(newPaletteName)}>
                             <TextValidator
                                 label="Palette Name"
                                 value={newPaletteName}
                                 name='newPaletteName'
                                 onChange={this.handleChange}
+                                fullWidth
+                                margin='normal'
                                 validators={[
                                     'required',
                                     'isPaletteNameUnique'
@@ -72,25 +69,21 @@ class PaletteMetaForm extends Component {
                                     'This palette name already exists!'
                                 ]}
                             />
-                            <Button
-                                variant='contained'
-                                type='submit'
-                                color='primary'
-                            >
-                                Save Palette
-                            </Button>
-                        </ValidatorForm>
                     </DialogContent>
                     <DialogActions>
                         <Button onClick={this.handleClose} color="primary">
                             Cancel
                         </Button>
-                        <Button onClick={this.handleClose} color="primary">
-                            Subscribe
+                        <Button
+                            variant='contained'
+                            type='submit'
+                            color='primary'
+                        >
+                            Save Palette
                         </Button>
                     </DialogActions>
-                </Dialog>
-            </div>
+                </ValidatorForm>
+            </Dialog>
         );
     }
 }
