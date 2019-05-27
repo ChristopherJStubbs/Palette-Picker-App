@@ -1,3 +1,4 @@
+import sizes from './sizes';
 export default {
     Navbar: {
         display: "flex",
@@ -17,6 +18,12 @@ export default {
         "& a": {
             textDecoration: "none",
             color: "black",
+        },
+        [sizes.down("mobileLandscape")]: {
+            fontSize: "1.25rem",
+        },
+        [sizes.down("mobile")]: {
+            display: "none",
         }
     },
     slider: {
@@ -38,6 +45,9 @@ export default {
             height: "13px",
             marginLeft: "-7px",
             marginTop: "-3px",
+        },
+        [sizes.down("mobile")]: {
+            width: "10rem",
         }
     },
     selectContainer: {

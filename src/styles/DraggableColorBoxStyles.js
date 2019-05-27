@@ -1,3 +1,4 @@
+import sizes from './sizes';
 const styles = {
     root: {
         width: "20%",
@@ -10,8 +11,23 @@ const styles = {
             color: "#ffe",
             cursor: "pointer",
             transform: "scale(1.1)",
+        },
+        [sizes.down("desktop")]: {
+            width: "25%",
+            height: "20%",
+        },
+        [sizes.down("tablet")]: {
+            width: "50%",
+            height: "20%",
+        },
+        [sizes.down("mobileLandscape")]: {
+            width: "50%",
+            height: "20%",
+        },
+        [sizes.down("mobile")]: {
+            width: "100%",
+            height: "20%",
         }
-
     },
     boxContent: {
         position: "absolute",
