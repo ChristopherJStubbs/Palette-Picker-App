@@ -1,4 +1,5 @@
 import chroma from 'chroma-js';
+import sizes from './sizes';
 
 export default {
     ColorBox: {
@@ -12,7 +13,19 @@ export default {
             opacity: "1",
             transition: "0.5s",
             cursor: "pointer"
-        }
+        },
+        [sizes.down("tablet")]: {
+            width: "25%",
+            height: props => props.showingFullPalette ? "20%" : "50%",
+        },
+        [sizes.down("mobileLandscape")]: {
+            width: "50%",
+            height: props => props.showingFullPalette ? "20%" : "50%",
+        },
+        [sizes.down("mobile")]: {
+            width: "50%",
+            height: props => props.showingFullPalette ? "20%" : "50%",
+        },
     },
     copyText: {
         color: props => chroma(props.background).luminance() >= 0.7 ? "black" : "white"
