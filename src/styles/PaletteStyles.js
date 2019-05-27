@@ -1,3 +1,4 @@
+import sizes from './sizes';
 export default {
     Palette: {
         height: "100vh",
@@ -22,7 +23,7 @@ export default {
             height: "30px",
             position: "absolute",
             display: "inline-block",
-            top: "50%",
+            top: "48%",
             left: "50%",
             marginLeft: "-50px",
             marginTop: -"15px",
@@ -33,6 +34,22 @@ export default {
             lineHeight: "30px",
             border: "none",
             textDecoration: "none",
-        }
+        },
+        [sizes.down("desktop")]: {
+            height: "50%",
+            width: "20%",
+        },
+        [sizes.down("tablet")]: {
+            height: "33.333333%",
+            width: "25%",
+        },
+        [sizes.down("mobileLandscape")]: {
+            height: "20%",
+            width: "50%",
+        },
+        [sizes.down("mobile")]: {
+            height: "20%",
+            width: "50%",
+        },
     }
 }

@@ -16,15 +16,15 @@ export default {
         },
         [sizes.down("tablet")]: {
             width: "25%",
-            height: props => props.showingFullPalette ? "20%" : "50%",
+            height: props => props.showingFullPalette ? "20%" : "33.333333%",
         },
         [sizes.down("mobileLandscape")]: {
             width: "50%",
-            height: props => props.showingFullPalette ? "20%" : "50%",
+            height: props => props.showingFullPalette ? "20%" : "20%",
         },
         [sizes.down("mobile")]: {
             width: "50%",
-            height: props => props.showingFullPalette ? "20%" : "50%",
+            height: props => props.showingFullPalette ? "20%" : "20%",
         },
     },
     copyText: {
@@ -52,7 +52,7 @@ export default {
         height: "30px",
         position: "absolute",
         display: "inline-block",
-        top: "50%",
+        top: "48%",
         left: "50%",
         marginLeft: "-50px",
         marginTop: -"15px",
@@ -63,14 +63,14 @@ export default {
         lineHeight: "30px",
         border: "none",
         textDecoration: "none",
-        opacity: "0"
+        opacity: "0",
     },
     boxContent: {
         position: "absolute",
         padding: "10px",
         width: "100%",
-        left: "0",
-        bottom: "0",
+        left: "0px",
+        bottom: "0px",
         color: "black",
         letterSpacing: "1px",
         textTransform: "uppercase",
@@ -99,11 +99,11 @@ export default {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        flexDirection: "column",
         fontSize: "4rem",
         transform: "scale(0.1)",
         opacity: "0",
         color: "#fff",
-        flexDirection: "column",
         "& h1": {
             fontWeight: "400",
             textShadow: "1px 2px black",
@@ -111,8 +111,11 @@ export default {
             width: "100%",
             textAlign: "center",
             marginBottom: "0",
-            padding: "1.5rem",
-            textTransform: "uppercase"
+            padding: "1rem",
+            textTransform: "uppercase",
+            [sizes.down("mobile")]: {
+                fontSize: "5rem",
+            }
         },
         "& p": {
             fontSize: "2rem",
