@@ -30,6 +30,13 @@ class App extends Component {
         window.localStorage.setItem("palettes", JSON.stringify(this.state.palettes));
     }
 
+    deletePalette = (id) => {
+        this.setState( st => ({
+            palettes: st.palettes.filter(palette => palette.id !== id)
+        }))
+        this.syncLocalStorage();
+    }
+
     render() {
         return (
             <Switch>
@@ -67,7 +74,10 @@ class App extends Component {
                 <Route
                     path="/"
                     render={routeProps => (
-                        <PaletteList palettes={this.state.palettes} {...routeProps} />
+                        <PaletteList
+                            palettes={this.state.palettes}
+                            deletePalette={this.deletePalette}
+                            {...routeProps} />
                     )}
                 />
             </Switch>
