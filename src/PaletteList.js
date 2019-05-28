@@ -39,7 +39,7 @@ class PaletteList extends Component {
         });
     }
 
-    goToPalette(id) {
+    goToPalette = (id) => {
         this.props.history.push(`/palette/${id}`)
     }
 
