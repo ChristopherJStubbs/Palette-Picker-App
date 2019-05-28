@@ -1,3 +1,4 @@
+import sizes from './sizes';
 export default {
     root: {
         backgroundColor: "lightblue",
@@ -11,7 +12,19 @@ export default {
         display: "flex",
         alignItems: "flex-start",
         flexDirection: "column",
-        flexWrap: "wrap"
+        flexWrap: "wrap",
+        [sizes.down("bigDesktop")]: {
+            width: "70%",
+        },
+        [sizes.down("desktop")]: {
+            width: "75%",
+        },
+        [sizes.down("mobileLandscape")]: {
+            width: "80%",
+        },
+        [sizes.down("mobile")]: {
+            width: "75%",
+        },
     },
     nav: {
         display: "flex",
@@ -28,6 +41,12 @@ export default {
         width: "100%",
         display: "grid",
         gridTemplateColumns: "repeat(3, 1fr)",
-        gridGap: "5%"
-    }
+        gridGap: "5%",
+        [sizes.down("tablet")]: {
+            gridTemplateColumns: "repeat(2, 50%)",
+        },
+        [sizes.down("mobile")]: {
+            gridTemplateColumns: "repeat(1, 100%)",
+        },
+    },
 };
