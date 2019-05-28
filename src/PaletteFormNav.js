@@ -9,7 +9,6 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import Button from '@material-ui/core/Button';
 import styles from './styles/PaletteFormNavStyles';
 
@@ -17,7 +16,6 @@ class PaletteFormNav extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            newPaletteName: '',
             isFormOpen: false
         }
     }
@@ -41,7 +39,6 @@ class PaletteFormNav extends Component {
     }
 
     render() {
-        const { newPaletteName } = this.state;
         const { classes, open, palettes, handleSubmit } = this.props;
         return (
             <div className={classes.root}>

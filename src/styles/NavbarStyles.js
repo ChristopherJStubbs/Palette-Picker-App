@@ -46,7 +46,7 @@ export default {
             marginLeft: "-7px",
             marginTop: "-3px",
         },
-        [sizes.down("mobile")]: {
+        [sizes.down("mobileLandscape")]: {
             width: "10rem",
         }
     },
